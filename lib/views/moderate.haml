@@ -1,0 +1,5 @@
+- Track.all.each do |track|
+  %a{:href => track.url}= "#{track.artist} - #{track.track}"
+  %form{:method => "POST", :action => "/moderate"}
+    %input{:type => "hidden", :name => "track", :value => track.id}
+    %input{:type => "submit", :value => "Approve"}
